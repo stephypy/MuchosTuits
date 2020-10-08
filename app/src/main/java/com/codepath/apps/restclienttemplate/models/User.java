@@ -5,15 +5,15 @@ import org.json.JSONObject;
 
 public class User {
 
-    String name;
-    String screenName;
-    String publicImageURL;
+    public String name;
+    public String screenName;
+    public String profileImageURL;
 
     public static User fromJson(JSONObject jsonObject) throws JSONException {
         User user = new User();
         user.name = jsonObject.getString("name");
         user.screenName = jsonObject.getString("screen_name");
-        user.publicImageURL = jsonObject.getString("profile_image_url_https");
+        user.profileImageURL = jsonObject.getString("profile_image_url_https");
         return user;
     }
 }

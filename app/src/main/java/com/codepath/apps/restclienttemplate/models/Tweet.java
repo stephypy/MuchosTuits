@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tweet {
-    String body;
-    String createdAt;
-    User user;
+    public String body;
+    public String createdAt;
+    public User user;
 
     public static Tweet fromJson(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
