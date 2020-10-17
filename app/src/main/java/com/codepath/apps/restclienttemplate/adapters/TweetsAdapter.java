@@ -69,17 +69,22 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.Viewholder
         ImageView ivProfileImage;
         TextView tvBody;
         TextView tvScreenName;
+        TextView tvTimestamp;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            tvTimestamp = itemView.findViewById(R.id.tvTimestamp);
         }
 
         public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
+            // Format: Weekday MM DD HR:MIN:SEC +0000 YYYY
+            String[] datetime = tweet.createdAt.split(" ");
+            tvTimestamp.setText(String.format("%s %s", datetime[1], datetime[2]));
             Glide.with(context).load(tweet.user.profileImageURL).into(ivProfileImage);
         }
     }

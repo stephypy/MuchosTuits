@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
@@ -22,9 +25,12 @@ public class ComposeActivity extends AppCompatActivity {
 
     public static final String TAG = "ComposeActivity";
     public static final int TWEET_LIMIT_LENGTH = 280;
+    public static final String CHARACTERS_TEXT = " characters left";
+    public static int CHARACTERS_MAX = 280;
 
     TwitterClient client;
 
+    TextView characterCounter;
     EditText etCompose;
     Button btnTweet;
 
@@ -35,8 +41,27 @@ public class ComposeActivity extends AppCompatActivity {
 
         client = TwitterApp.getTwitterClient(this);
 
+        characterCounter = findViewById(R.id.characterCounter);
         etCompose = findViewById(R.id.etCompose);
         btnTweet = findViewById(R.id.btnTweet);
+
+        // Set add text changed listener on edit text
+        etCompose.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                int charactersLeft = CHARACTERS_MAX - s.length();
+                characterCounter.setText(String.format("%d%s", charactersLeft, CHARACTERS_TEXT));
+            }
+        });
 
         // Set click listener on button
         btnTweet.setOnClickListener(new View.OnClickListener() {
