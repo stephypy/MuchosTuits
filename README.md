@@ -1,6 +1,6 @@
 # Project 2 - *MuchosTuits*
 
-# Part 2
+# *Part 2*
 **MuchosTuits** is an android app that allows a user to view his Twitter timeline and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
 Time spent: **3** hours spent in total
@@ -36,7 +36,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width=500 alt='Video Walkthrough' />
+<img src='MuchosTuits_Part2.gif' title='Video Walkthrough' width=500 alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -44,7 +44,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Time constraints in my own personal schedule prevented me from exploring more stretch features for this project, but I had fun with it! 
 
-# Part 1
+# *Part 1*
 
 **MuchosTuits** is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
